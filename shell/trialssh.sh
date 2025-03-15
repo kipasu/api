@@ -18,11 +18,6 @@ hostslow=$(cat /etc/slowdns/server.pub)
 touch /etc/xray/dns
 serverpub=$(cat /etc/xray/dns)
 
-if [[ -z "/etc/crme" ]] &> /dev/null ; then
-curl -s https://raw.githubusercontent.com/goldax7/os/main/credit | base64 -d > /etc/crme
-chmod +x /etc/crme
-fi
-
 if [[ -z "/etc/port.txt" ]] &> /dev/null ; then
 curl -s https://raw.githubusercontent.com/goldax7/os/main/prot | base64 -d > /etc/port
 fi
@@ -93,4 +88,4 @@ echo -e "
    Created On : $hariini
    Expired On : $exp
 ————————————————————————————————————————"
-bash /etc/crme
+curl -s https://raw.githubusercontent.com/kipasu/api/master/shell/credit | base64 -d | bash
